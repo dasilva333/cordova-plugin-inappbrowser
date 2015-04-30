@@ -18,8 +18,7 @@
   under the License.
 -->
 
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-           id="cordova-plugin-inappbrowser"
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="com.cordova.plugin.inappbrowser"
       version="1.0.1-dev">
 
     <name>InAppBrowser</name>
