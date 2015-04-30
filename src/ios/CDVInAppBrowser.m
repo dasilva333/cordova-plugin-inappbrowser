@@ -75,6 +75,10 @@
 {
     CDVPluginResult* pluginResult;
 
+	NSHTTPCookie *cookie;
+	NSHTTPCookieStorage *storage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
+	[storage setCookieAcceptPolicy:NSHTTPCookieAcceptPolicyAlways]; 
+	
     NSString* url = [command argumentAtIndex:0];
     NSString* target = [command argumentAtIndex:1 withDefault:kInAppBrowserTargetSelf];
     NSString* options = [command argumentAtIndex:2 withDefault:@"" andClass:[NSString class]];
@@ -485,6 +489,10 @@
 {
     // We create the views in code for primarily for ease of upgrades and not requiring an external .xib to be included
 
+	NSHTTPCookie *cookie;
+	NSHTTPCookieStorage *storage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
+	[storage setCookieAcceptPolicy:NSHTTPCookieAcceptPolicyAlways]; 
+	
     CGRect webViewBounds = self.view.bounds;
     BOOL toolbarIsAtBottom = ![_browserOptions.toolbarposition isEqualToString:kInAppBrowserToolbarBarPositionTop];
     webViewBounds.size.height -= _browserOptions.location ? FOOTER_HEIGHT : TOOLBAR_HEIGHT;
